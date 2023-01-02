@@ -1,7 +1,7 @@
 Summary:	A container-based approach to boot a full Android system on a regular GNU/Linux system
 Name:		waydroid
 Version:	1.3.4
-Release:	0.1
+Release:	1
 License:	GPL v3
 Group:		Applications/Emulators
 Source0:	https://github.com/waydroid/waydroid/archive/%{version}/%{name}-%{version}.tar.gz
