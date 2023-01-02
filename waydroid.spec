@@ -9,6 +9,7 @@ Source0:	https://github.com/waydroid/waydroid/archive/%{version}/%{name}-%{versi
 URL:		https://waydro.id/
 BuildRequires:	rpmbuild(macros) >= 2.011
 Requires(post,preun,postun):	systemd-units >= 1:250.1
+Requires:	lxc >= 4.0.10
 Requires:	systemd-units >= 1:250.1
 Requires:	python3-gbinder
 Requires:	python3-pyclipper
@@ -25,6 +26,7 @@ GNU/Linux system.
 
 %install
 rm -rf $RPM_BUILD_ROOT
+install -d $RPM_BUILD_ROOT/var/lib/waydroid/{cache_http,data,images,rootfs,host-permissions,lxc/waydroid}
 
 %{__make} install \
 	SYSD_DIR=%{systemdunitdir} \
@@ -52,9 +54,22 @@ rm -rf $RPM_BUILD_ROOT
 %attr(755,root,root) %{_bindir}/%{name}*
 %dir %{_datadir}/%{name}
 %attr(755,root,root) %{_datadir}/%{name}/waydroid.py
-%{_datadir}/%{name}/data
+%dir %{_datadir}/%{name}/data
+%{_datadir}/%{name}/data/AppIcon.png
+%{_datadir}/%{name}/data/configs
+%dir %{_datadir}/%{name}/data/scripts
+%attr(755,root,root) %{_datadir}/%{name}/data/scripts/waydroid-net.sh
 %{_datadir}/%{name}/tools
 %{systemdunitdir}/waydroid-container.service
 %{_desktopdir}/Waydroid.desktop
 %{_desktopdir}/waydroid.market.desktop
 %{_datadir}/metainfo/id.waydro.waydroid.metainfo.xml
+
+%dir /var/lib/waydroid
+%dir /var/lib/waydroid/cache_http
+%dir /var/lib/waydroid/data
+%dir /var/lib/waydroid/images
+%dir /var/lib/waydroid/rootfs
+%dir /var/lib/waydroid/host-permissions
+%dir /var/lib/waydroid/lxc
+%dir /var/lib/waydroid/lxc/waydroid
