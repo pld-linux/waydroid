@@ -12,7 +12,7 @@ Requires(post,preun,postun):	systemd-units >= 1:250.1
 Requires:	lxc >= 4.0.10
 Requires:	systemd-units >= 1:250.1
 Requires:	python3-gbinder
-Requires:	python3-pyclipper
+Requires:	python3-pyclip
 Requires:	python3-pygobject3
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
