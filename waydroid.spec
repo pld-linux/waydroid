@@ -26,7 +26,7 @@ GNU/Linux system.
 
 %install
 rm -rf $RPM_BUILD_ROOT
-install -d $RPM_BUILD_ROOT/var/lib/waydroid/{cache_http,data,images,rootfs,host-permissions,lxc/waydroid}
+install -d $RPM_BUILD_ROOT/var/lib/waydroid/{cache_http,data,images,rootfs,host-permissions,lxc}
 
 %{__make} install \
 	SYSD_DIR=%{systemdunitdir} \
@@ -72,4 +72,3 @@ rm -rf $RPM_BUILD_ROOT
 %dir /var/lib/waydroid/rootfs
 %dir /var/lib/waydroid/host-permissions
 %dir /var/lib/waydroid/lxc
-%dir /var/lib/waydroid/lxc/waydroid
