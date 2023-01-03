@@ -9,6 +9,7 @@ Source0:	https://github.com/waydroid/waydroid/archive/%{version}/%{name}-%{versi
 URL:		https://waydro.id/
 BuildRequires:	rpmbuild(macros) >= 2.011
 Requires(post,preun,postun):	systemd-units >= 1:250.1
+Requires:	dnsmasq
 Requires:	lxc >= 4.0.10
 Requires:	systemd-units >= 1:250.1
 Requires:	python3-gbinder
